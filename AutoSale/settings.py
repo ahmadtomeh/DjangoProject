@@ -33,12 +33,20 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'login_registration_app',
     'car_app',
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4f77f5a6c7fa2cea2137bc0bcf91e4fbe7edfa51
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+<<<<<<< HEAD
     'django.contrib.staticfiles',
+=======
+    'django.contrib.staticfiles',   
+>>>>>>> 4f77f5a6c7fa2cea2137bc0bcf91e4fbe7edfa51
 ]
 
 MIDDLEWARE = [
