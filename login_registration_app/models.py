@@ -1,6 +1,6 @@
-from turtle import pos
 from urllib import request
 from django.db import models
+from car_app.city_model import City
 import re
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -18,8 +18,8 @@ class UserManager(models.Manager):
         user_bday = datetime.strptime(postData['bday'], '%Y-%m-%d')
         if user_bday > datetime.today():
             errors['past'] = 'Birthday should be in the past!'
-        if user_bday > datetime.today() - relativedelta(years=13):
-            errors['age'] = 'You must be at least 13 years old!'
+        if user_bday > datetime.today() - relativedelta(years=17.5):
+            errors['age'] = 'You must be at least 17.5 years old!'
         if len(postData['bday']) < 10:
             errors['date'] = 'Enter your birthday.'
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
@@ -54,6 +54,7 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
+    city = models.ForeignKey(City, related_name='users', on_delete=models.CASCADE)
 
 def all_users():
     return User.objects.all()
