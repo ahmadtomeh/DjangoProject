@@ -32,17 +32,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'login_registration_app',
-    'car_ app',
-    
+    'car_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login_registration_app',
-    'car_ app',
-    
 ]
 
 MIDDLEWARE = [

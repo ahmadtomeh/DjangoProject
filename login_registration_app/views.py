@@ -6,23 +6,23 @@ from . import models
 def index(request):
     return render(request, 'login_index.html')
 
-def check_register(request):
+def check_register(request):    
     reg_errors = models.register_errors(request)
     if reg_errors:
         for value in reg_errors.values():
             messages.error(request, value)
-        return redirect('/')
+        return redirect('/log/reg')
     models.register(request)
-    return redirect('/books')
+    return redirect('/')
 
 def check_login(request):
     log_errors = models.login_errors(request)
     if log_errors:
         for value in log_errors.values():
             messages.error(request, value)
-        return redirect('/')
+        return redirect('/log/reg')
     models.login(request)
-    return redirect('/books')
+    return redirect('/')
 
 def logout(request):
     request.session.clear()

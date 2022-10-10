@@ -65,6 +65,7 @@ def register(request):
     password = request.POST['password']
     pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
     User.objects.create(
+        id = request.POST['id'],
         first_name = request.POST['first-name'],
         last_name = request.POST['last-name'],
         birthday = request.POST['bday'],
@@ -73,6 +74,7 @@ def register(request):
     )
     request.session['first_name'] = request.POST['first-name']
     request.session['email'] = request.POST['email']
+    request.session['id'] = request.POST['id']
 
 def login_errors(request):
     return User.objects.login_validator(request.POST)

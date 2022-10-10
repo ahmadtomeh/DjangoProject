@@ -12,7 +12,7 @@
     <div class="container">
         <div class="registration">
             <p class="top">Registration</p>
-            <form action="/check_register" method="post">
+            <form action="/log/reg/check_register" method="post">
                 {% csrf_token %}
                 <table>
                     <tr class="row">
@@ -46,7 +46,7 @@
         </div>
         <div class="login">
             <p class="top">Login</p>
-            <form action="/check_login" method="post">
+            <form action="/log/reg/check_login" method="post">
                 {% csrf_token %}
                 <table>
                     <tr>
